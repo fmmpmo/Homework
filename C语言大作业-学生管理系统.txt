@@ -133,7 +133,7 @@ void Input()
     printf("                物理成绩：");
     scanf("%f",&x.physics);
     getchar();
-    fp=fopen("wbc.txt","ab");
+    fp=fopen("文件名","ab");
     if(fp==NULL)
     {
         printf("打开失败！\n");
@@ -196,8 +196,8 @@ void ChangeByNum()
     }
     fclose(fp);
     fclose(fp2);
-    remove("wbc.txt");
-    rename("qzl.txt","wbc.txt");
+    remove("文件名");
+    rename("新的文件名","文件名");
 
     fclose(fp);
 }
@@ -210,8 +210,8 @@ void ChangeByName()
     char str[15];
     printf("请输入想修改的学生姓名：");
     gets(str);
-    fp=fopen("wbc.txt","rb");
-    fp2=fopen("qzl.txt","wb");
+    fp=fopen("文件名","rb");
+    fp2=fopen("新的文件名","wb");
     flag=0;
     if(fp==NULL||fp2==NULL)
     {
@@ -251,8 +251,8 @@ void ChangeByName()
         }
         fclose(fp);
         fclose(fp2);
-        remove("wbc.txt");
-        rename("qzl.txt","wbc.txt");
+        remove("文件名");
+        rename("新的文件名","文件名");
     fclose(fp);
 }
 /*函数功能：删除学生成绩*/
@@ -264,8 +264,8 @@ void Delete()
     char str[15];
     printf("请输入想删除的学生学号：");
     gets(str);
-    fp=fopen("wbc.txt","rb");
-    fp2=fopen("qzl.txt","wb");
+    fp=fopen("文件名","rb");
+    fp2=fopen("新的文件名","wb");
     flag=0;
     if(fp==NULL||fp2==NULL)
     {
@@ -293,8 +293,8 @@ void Delete()
     }
     fclose(fp);
     fclose(fp2);
-    remove("wbc.txt");
-    rename("qzl.txt","wbc.txt");
+    remove("文件名");
+    rename("新的文件名","文件名");
     fclose(fp);
 }
 /*函数功能：按学号查询学生个人成绩*/
@@ -306,7 +306,7 @@ void SearchNum()
     char str[15];
     printf("请输入想查找的学生学号：");
     gets(str);
-    fp=fopen("wbc.txt","r");
+    fp=fopen("文件名","r");
     flag=0;
     if(fp==NULL)
     {
@@ -342,7 +342,7 @@ void SearchName()
     char str[15];
     printf("请输入想查找的学生姓名：");
     gets(str);
-    fp=fopen("wbc.txt","r");
+    fp=fopen("文件名","r");
     flag=0;
     if(fp==NULL)
     {
@@ -375,7 +375,7 @@ void SumSort()
     SR i,a[30],temp;
     int n,x,y;
     float sum;
-    fp=fopen("wbc.txt","r");
+    fp=fopen("文件名","r");
     n=0;
     if(fp==NULL)
     {
@@ -420,7 +420,7 @@ void Lookthrough()
     SR i,a[30],temp;
     int n,x,y;
     float sum;
-    fp=fopen("wbc.txt","r");
+    fp=fopen("文件名","r");
     n=0;
     if(fp==NULL)
     {
@@ -470,7 +470,7 @@ void CourseSort()
     printf("\n请选择排序科目：");
     scanf("%d",&a);
     getchar();
-    fp=fopen("wbc.txt","rb");
+    fp=fopen("文件名","rb");
     n=0;
     if(fp==NULL)
     {
@@ -557,7 +557,7 @@ void CourseSort()
 /*函数功能：删除所有信息*/
 void DeleteAll()
 {
-    fp=fopen("wbc.txt","w");
+    fp=fopen("文件名","w");
     fclose(fp);
     printf("已删除全部信息！\n");
 }
