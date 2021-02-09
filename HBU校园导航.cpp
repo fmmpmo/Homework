@@ -1,4 +1,3 @@
-```c++
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -731,5 +730,3 @@ void Create() {
     hbu.graph[9][10] = hbu.graph[10][9] = 100;
     hbu.graph[10][11] = hbu.graph[11][10] = 100;
 }
-```
-
